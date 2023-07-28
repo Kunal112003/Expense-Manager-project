@@ -7,15 +7,32 @@
 
     <fragment
         android:id="@+id/nav_login"
-        android:name="com.example.ai_project_10.ui.ui.login.LoginFragment"
+        android:name="com.example.ai_project_10.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_nav_login_to_nav_home"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_login_to_nav_register"
+            app:destination="@id/nav_register" />
 
 
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="com.example.ai_project_10.RegisterFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_nav_register_to_nav_home"
+            app:destination="@id/nav_home" />
+
+
+    </fragment>
+
+
 
     <fragment
         android:id="@+id/nav_home"
@@ -24,20 +41,38 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_search"
-            app:destination="@id/nav_search" />
+            app:destination="@id/nav_search"
+            />
+        <action
+            android:id="@+id/action_nav_home_to_nav_playlists"
+            app:destination="@id/nav_playlists" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_search"
         android:name="com.example.ai_project_10.ui.search.SearchFragment"
         android:label="Search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_nav_search_to_nav_playlists"
+            app:destination="@id/nav_playlists" />
+        <action
+            android:id="@+id/action_nav_search_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_playlists"
         android:name="com.example.ai_project_10.ui.playlists.PlaylistsFragment"
         android:label="Playlists"
-        tools:layout="@layout/fragment_playlists" />
+        tools:layout="@layout/fragment_playlists" >
+        <action
+            android:id="@+id/action_nav_playlists_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_playlists_to_nav_search"
+            app:destination="@id/nav_search" />
+    </fragment>
 
 <!--    <fragment-->
 <!--        android:id="@+id/nav_discover"-->
