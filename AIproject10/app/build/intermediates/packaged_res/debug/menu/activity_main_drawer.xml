@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_search"
+
+            android:title="Search" />
+        <item
+            android:id="@+id/nav_playlists"
+
+            android:title="Playlists" />
+        <item
+            android:id="@+id/nav_discover"
+
+            android:title="Discover" />
+        <item
+            android:id="@+id/nav_library"
+
+            android:title="Library" />
+    </group>
+
+    <item android:title="AI Recommendations">
+        <menu>
+            <item
+                android:id="@+id/nav_personalized"
+                android:title="Personalized" />
+            <item
+                android:id="@+id/nav_mood_playlists"
+                android:title="Mood Playlists" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/nav_visualizations"
+
+        android:title="Visualizations" />
+
+    <item
+        android:id="@+id/nav_lyrics"
+
+        android:title="Lyrics" />
+
+    <item
+        android:id="@+id/nav_settings"
+
+        android:title="Settings" />
+
+    <item
+        android:id="@+id/nav_account"
+
+        android:title="Account" />
+
+    <item
+        android:id="@+id/nav_social"
+
+        android:title="Social Sharing" />
+
+    <item
+        android:id="@+id/nav_help"
+
+        android:title="Help / Support" />
+</menu>
