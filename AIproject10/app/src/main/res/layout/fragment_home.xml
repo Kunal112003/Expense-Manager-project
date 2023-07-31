@@ -59,6 +59,27 @@
            android:textSize="30sp"
            />
 
+       <TextView
+              android:id="@+id/textView4"
+              android:layout_width="370dp"
+              android:layout_height="156dp"
+              android:layout_marginStart="20dp"
+              android:layout_marginTop="350dp"
+              android:layout_marginEnd="10dp"
+              android:background="#FE7E6F"
+              android:textSize="30sp"
+              />
+
+         <TextView
+                android:id="@+id/textView5"
+                android:layout_width="370dp"
+                android:layout_height="156dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="550dp"
+                android:layout_marginEnd="10dp"
+                android:background="#FE7E6F"
+                android:textSize="30sp"
+                />
 
 
    </RelativeLayout>

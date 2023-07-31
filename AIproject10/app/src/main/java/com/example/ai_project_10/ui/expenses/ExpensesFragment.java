@@ -1,4 +1,4 @@
-package com.example.ai_project_10.ui.search;
+package com.example.ai_project_10.ui.expenses;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,25 +8,25 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.ai_project_10.databinding.FragmentSearchBinding;
+import com.example.ai_project_10.databinding.FragmentExpensesBinding;
 
-public class SearchFragment extends Fragment {
 
-    private FragmentSearchBinding binding;
+public class ExpensesFragment extends Fragment {
+
+    private FragmentExpensesBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SearchViewModel searchViewModel =
-                new ViewModelProvider(this).get(SearchViewModel.class);
+        ExpensesViewModel slideshowViewModel =
+                new ViewModelProvider(this).get(ExpensesViewModel.class);
 
-        binding = FragmentSearchBinding.inflate(inflater, container, false);
+        binding = FragmentExpensesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.search;
-        searchViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textSlideshow;
+        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

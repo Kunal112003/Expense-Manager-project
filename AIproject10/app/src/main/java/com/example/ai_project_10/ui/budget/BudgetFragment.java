@@ -1,4 +1,4 @@
-package com.example.ai_project_10.ui.playlists;
+package com.example.ai_project_10.ui.budget;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,23 +10,23 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.ai_project_10.databinding.FragmentPlaylistsBinding;
 
+import com.example.ai_project_10.databinding.FragmentBudgetBinding;
 
-public class PlaylistsFragment extends Fragment {
+public class BudgetFragment extends Fragment {
 
-    private FragmentPlaylistsBinding binding;
+    private FragmentBudgetBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        PlaylistsViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(PlaylistsViewModel.class);
+        BudgetViewModel searchViewModel =
+                new ViewModelProvider(this).get(BudgetViewModel.class);
 
-        binding = FragmentPlaylistsBinding.inflate(inflater, container, false);
+        binding = FragmentBudgetBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.budget;
+        searchViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

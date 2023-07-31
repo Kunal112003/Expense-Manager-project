@@ -1,16 +1,16 @@
-package com.example.ai_project_10.ui.search;
+package com.example.ai_project_10.ui.expenses;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SearchViewModel extends ViewModel {
+public class ExpensesViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public SearchViewModel() {
+    public ExpensesViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is slideshow fragment");
     }
 
     public LiveData<String> getText() {

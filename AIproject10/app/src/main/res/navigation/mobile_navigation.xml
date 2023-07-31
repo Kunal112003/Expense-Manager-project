@@ -41,37 +41,37 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_search"
-            app:destination="@id/nav_search"
+            app:destination="@id/nav_budget"
             />
         <action
             android:id="@+id/action_nav_home_to_nav_playlists"
-            app:destination="@id/nav_playlists" />
+            app:destination="@id/nav_expenses" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_search"
-        android:name="com.example.ai_project_10.ui.search.SearchFragment"
-        android:label="Search"
-        tools:layout="@layout/fragment_search" >
+        android:id="@+id/nav_budget"
+        android:name="com.example.ai_project_10.ui.budget.BudgetFragment"
+        android:label="Budget"
+        tools:layout="@layout/fragment_budget" >
         <action
-            android:id="@+id/action_nav_search_to_nav_playlists"
-            app:destination="@id/nav_playlists" />
+            android:id="@+id/action_nav_budget_to_nav_playlists"
+            app:destination="@id/nav_expenses" />
         <action
-            android:id="@+id/action_nav_search_to_nav_home"
+            android:id="@+id/action_nav_budget_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_playlists"
-        android:name="com.example.ai_project_10.ui.playlists.PlaylistsFragment"
-        android:label="Playlists"
-        tools:layout="@layout/fragment_playlists" >
+        android:id="@+id/nav_expenses"
+        android:name="com.example.ai_project_10.ui.expenses.ExpensesFragment"
+        android:label="Expenses"
+        tools:layout="@layout/fragment_expenses" >
         <action
-            android:id="@+id/action_nav_playlists_to_nav_home"
+            android:id="@+id/action_nav_expenses_to_nav_home"
             app:destination="@id/nav_home" />
         <action
-            android:id="@+id/action_nav_playlists_to_nav_search"
-            app:destination="@id/nav_search" />
+            android:id="@+id/action_nav_expenses_to_nav_search"
+            app:destination="@id/nav_budget" />
     </fragment>
 
 <!--    <fragment-->
