@@ -13,8 +13,18 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.common.hash.Hashing;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 
 public class RegisterFragment extends Fragment {
 
@@ -27,6 +37,43 @@ public class RegisterFragment extends Fragment {
         private Button buttonLogin;
 
         private FirebaseAuth mAuth;
+
+        private FirebaseFirestore db;
+
+        public static byte [] getSHA(String input) throws NoSuchAlgorithmException
+        {
+            // Static getInstance method is called with hashing SHA
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+
+            // digest() method called
+            // to calculate message digest of an input
+            // and return array of byte
+            return md.digest(input.getBytes(StandardCharsets.UTF_8));
+        }
+
+        public static String toHexString(byte [] hash)
+        {
+            // Convert byte array into signum representation
+            BigInteger number = new BigInteger(1, hash);
+
+            // Convert message digest into hex value
+            StringBuilder hexString = new StringBuilder(number.toString(16));
+
+            // Pad with leading zeros
+            while (hexString.length() < 32)
+            {
+                hexString.insert(0, '0');
+            }
+
+            return hexString.toString();
+        }
+
+        public static String sha256(String input) throws NoSuchAlgorithmException
+        {
+            return toHexString(getSHA(input));
+        }
+
+
 
         @SuppressLint("MissingInflatedId")
         @Override
@@ -87,6 +134,17 @@ public class RegisterFragment extends Fragment {
                             user.setPassword(password);
                             user.setUsername(username);
 
+                            //hash username
+                            String hashedUsername = "";
+                            try {
+                                hashedUsername = sha256(username);
+                            } catch (NoSuchAlgorithmException e) {
+                                e.printStackTrace();
+                            }
+                            System.out.println(hashedUsername);
+
+
+
 
 
                             // Store the user data in Firestore under a document with the username as its ID
@@ -111,5 +169,10 @@ public class RegisterFragment extends Fragment {
             return view;
         }
     }
+
+
+
+
+
 
 
