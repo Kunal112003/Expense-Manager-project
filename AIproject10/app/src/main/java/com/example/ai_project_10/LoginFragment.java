@@ -28,6 +28,8 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Map;
+
 
 public class LoginFragment extends Fragment {
 
@@ -44,28 +46,29 @@ public class LoginFragment extends Fragment {
 
 
 
-    private void addUserToFirestore(String username,String email, String password, String UserId) {
-        // Create a new User object with username and email (you can modify this based on your actual data structure)
-        User user = new User(username,email, password, UserId);
-
-        // Add the user data to Firestore under a document with the user ID as its name
-        FirebaseFirestore.getInstance().collection("Users")
-                .document(username)
-                .set(user)
-                .addOnSuccessListener(aVoid -> {
-                    // User data added successfully, navigate to home fragment
-                    Bundle bundle = new Bundle();
-                    bundle.putString("username", email);
-                    NavHostFragment.findNavController(LoginFragment.this)
-                            .navigate(R.id.action_nav_login_to_nav_home, bundle);
-                })
-                .addOnFailureListener(e -> {
-                    // Failed to add user data to Firestore
-                    Log.e(TAG, "Error adding user data to Firestore: ", e);
-                    Toast.makeText(requireContext(), "Error occurred. Please try again.",
-                            Toast.LENGTH_SHORT).show();
-                });
-    }
+//    private void addUserToFirestore(String username, String email, String password, String UserId,
+//                                    Map<String,String> item) {
+//        // Create a new User object with username and email (you can modify this based on your actual data structure)
+//        User user = new User(username,email, password, UserId,);
+//
+//        // Add the user data to Firestore under a document with the user ID as its name
+//        FirebaseFirestore.getInstance().collection("Users")
+//                .document(username)
+//                .set(user)
+//                .addOnSuccessListener(aVoid -> {
+//                    // User data added successfully, navigate to home fragment
+//                    Bundle bundle = new Bundle();
+//                    bundle.putString("username", email);
+//                    NavHostFragment.findNavController(LoginFragment.this)
+//                            .navigate(R.id.action_nav_login_to_nav_home, bundle);
+//                })
+//                .addOnFailureListener(e -> {
+//                    // Failed to add user data to Firestore
+//                    Log.e(TAG, "Error adding user data to Firestore: ", e);
+//                    Toast.makeText(requireContext(), "Error occurred. Please try again.",
+//                            Toast.LENGTH_SHORT).show();
+//                });
+//    }
 
 
     private void checkIfUserExists(String username,String password) {
