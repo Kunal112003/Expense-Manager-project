@@ -44,9 +44,9 @@ public class LoginFragment extends Fragment {
 
 
 
-    private void addUserToFirestore(String username,String email, String password) {
+    private void addUserToFirestore(String username,String email, String password, String UserId) {
         // Create a new User object with username and email (you can modify this based on your actual data structure)
-        User user = new User(username,email, password);
+        User user = new User(username,email, password, UserId);
 
         // Add the user data to Firestore under a document with the user ID as its name
         FirebaseFirestore.getInstance().collection("Users")

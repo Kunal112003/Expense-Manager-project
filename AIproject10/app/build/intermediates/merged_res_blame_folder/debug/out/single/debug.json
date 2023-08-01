@@ -8,10 +8,6 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_search.xml"
     },
     {
-        "merged": "com.example.ai_project_10.app-merged_res-41:/layout_fragment_reports.xml.flat",
-        "source": "com.example.ai_project_10.app-main-43:/layout/fragment_reports.xml"
-    },
-    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\drawable_side_nav_bar.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\drawable\\side_nav_bar.xml"
     },
@@ -40,6 +36,10 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\layout_fragment_budget.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_budget.xml"
+    },
+    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\menu_activity_main_drawer.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\menu\\activity_main_drawer.xml"
     },
@@ -48,8 +48,8 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.ai_project_10.app-merged_res-41:/layout_fragment_categories.xml.flat",
-        "source": "com.example.ai_project_10.app-main-43:/layout/fragment_categories.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\layout_fragment_categories.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_categories.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\layout_nav_header_main.xml.flat",
@@ -72,12 +72,8 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.ai_project_10.app-merged_res-41:/layout_fragment_home.xml.flat",
-        "source": "com.example.ai_project_10.app-main-43:/layout/fragment_home.xml"
-    },
-    {
-        "merged": "com.example.ai_project_10.app-merged_res-41:/layout_fragment_expenses.xml.flat",
-        "source": "com.example.ai_project_10.app-main-43:/layout/fragment_expenses.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\layout_fragment_expenses.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_expenses.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -88,12 +84,16 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\drawable\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "com.example.ai_project_10.app-merged_res-41:/navigation_mobile_navigation.xml.flat",
-        "source": "com.example.ai_project_10.app-main-43:/navigation/mobile_navigation.xml"
-    },
-    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.ai_project_10.app-merged_res-41:/menu_activity_main_drawer.xml.flat",
+        "source": "com.example.ai_project_10.app-main-43:/menu/activity_main_drawer.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\layout_fragment_reports.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_reports.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\xml_backup_rules.xml.flat",
@@ -146,9 +146,5 @@
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-merged_res-41:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_home.xml"
-    },
-    {
-        "merged": "com.example.ai_project_10.app-merged_res-41:/layout_fragment_budget.xml.flat",
-        "source": "com.example.ai_project_10.app-main-43:/layout/fragment_budget.xml"
     }
 ]

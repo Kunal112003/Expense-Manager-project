@@ -40,6 +40,8 @@ public class RegisterFragment extends Fragment {
 
         private FirebaseFirestore db;
 
+        String userid;
+
         public static byte [] getSHA(String input) throws NoSuchAlgorithmException
         {
             // Static getInstance method is called with hashing SHA
@@ -97,6 +99,12 @@ public class RegisterFragment extends Fragment {
                     String username = editTextUsername.getText().toString().trim();
                     String password = editTextPassword.getText().toString().trim();
                     String email = editTextEmail.getText().toString().trim();
+                    String hashedUsername = "";
+
+                    Map<String, String> items = new HashMap<>();
+                    Map<Double, String> budgets = new HashMap<>();
+                    Map<Double, String> expenses = new HashMap<>();
+
 
 
 
@@ -127,20 +135,26 @@ public class RegisterFragment extends Fragment {
 
 
 
-                            User user = new User(username,email, password); // Create a new user object with username and email
+                            User user = new User(username,email, password, hashedUsername, items, budgets, expenses); // Create a new user object with username and email
                             FirebaseFirestore db = FirebaseFirestore.getInstance();
                             //set user
                             user.setEmail(email);
                             user.setPassword(password);
                             user.setUsername(username);
+                            user.setItems(items);
+                            user.setBudgets(budgets);
+                            user.setExpenses(expenses);
 
-                            //hash username
-                            String hashedUsername = "";
+
+
                             try {
                                 hashedUsername = sha256(username);
                             } catch (NoSuchAlgorithmException e) {
                                 e.printStackTrace();
                             }
+
+                            user.setUser_id(hashedUsername);
+
                             System.out.println(hashedUsername);
 
 
@@ -148,13 +162,15 @@ public class RegisterFragment extends Fragment {
 
 
                             // Store the user data in Firestore under a document with the username as its ID
-                            db.collection("Users")
+                    String finalHashedUsername = hashedUsername;
+                    db.collection("Users")
                                     .document(username)
                                     .set(user)
                                     .addOnSuccessListener(aVoid -> {
                                         Toast.makeText(getActivity(), "User has been registered successfully", Toast.LENGTH_LONG).show();
                                         Bundle bundle = new Bundle();
                                         bundle.putString("username", username);
+                                        bundle.putString("userid", finalHashedUsername);
                                         //send bundle to home fragment
                                         NavHostFragment.findNavController(RegisterFragment.this)
                                                 .navigate(R.id.action_nav_register_to_nav_home, bundle);
