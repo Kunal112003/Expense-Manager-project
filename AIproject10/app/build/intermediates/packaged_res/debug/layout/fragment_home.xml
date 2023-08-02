@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:background="@drawable/background_design2"
+    tools:context=".ui.home.HomeFragment"
+    >
 
    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F1AC88"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="16dp">
@@ -21,10 +22,13 @@
            android:layout_marginStart="20dp"
            android:layout_marginTop="140dp"
            android:layout_marginEnd="10dp"
-           android:background="#FE7E6F"
 
-
-           android:textSize="30sp" />
+           android:radius="20dp"
+           android:alpha="0.7"
+           android:backgroundTint="@color/blue"
+           android:background="@drawable/rounded_corners"
+           android:textSize="30sp"
+            />
 
        <ImageView
            android:id="@+id/profile_pic"
@@ -33,7 +37,10 @@
            android:layout_marginStart="20dp"
            android:layout_marginTop="20dp"
            android:layout_marginEnd="10dp"
-           android:background="#FE7E6F" />
+           android:alpha="0.7"
+           android:backgroundTint="@color/blue"
+           android:background="@drawable/rounded_corners"
+           />
 
        <TextView
            android:id="@+id/welcome_text"
@@ -42,8 +49,9 @@
 
            android:layout_marginTop="20dp"
            android:layout_marginStart="120dp"
-
-           android:background="#FE7E6F"
+           android:alpha="0.7"
+           android:backgroundTint="@color/blue"
+           android:background="@drawable/rounded_corners"
 
            android:textSize="30sp"
            />
@@ -55,7 +63,9 @@
            android:layout_marginStart="220dp"
            android:layout_marginTop="140dp"
            android:layout_marginEnd="10dp"
-           android:background="#FE7E6F"
+           android:backgroundTint="@color/blue"
+           android:background="@drawable/rounded_corners"
+           android:alpha="0.7"
            android:textSize="30sp"
            />
 
@@ -66,7 +76,9 @@
               android:layout_marginStart="20dp"
               android:layout_marginTop="350dp"
               android:layout_marginEnd="10dp"
-              android:background="#FE7E6F"
+           android:backgroundTint="@color/blue"
+           android:background="@drawable/rounded_corners"
+           android:alpha="0.7"
               android:textSize="30sp"
               />
 
@@ -76,8 +88,10 @@
                 android:layout_height="156dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="550dp"
+             android:alpha="0.7"
                 android:layout_marginEnd="10dp"
-                android:background="#FE7E6F"
+             android:backgroundTint="@color/blue"
+             android:background="@drawable/rounded_corners"
                 android:textSize="30sp"
                 />
 

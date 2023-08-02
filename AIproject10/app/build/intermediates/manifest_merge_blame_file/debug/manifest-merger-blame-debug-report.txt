@@ -29,7 +29,7 @@
 17-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\user\.gradle\caches\transforms-3\e355d7978c2ac64412cf9977c399decd\transformed\play-services-measurement-api-21.3.0\AndroidManifest.xml:25:22-76
 18
 19    <application
-19-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:5:5-26:19
+19-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:5:5-28:19
 20        android:allowBackup="true"
 20-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:6:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -52,24 +52,24 @@
 31        android:theme="@style/Theme.AIproject10" >
 31-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:13:9-49
 32        <activity
-32-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:15:9-25:20
+32-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:17:9-27:20
 33            android:name="com.example.ai_project_10.MainActivity"
-33-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:16:13-41
+33-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:18:13-41
 34            android:exported="true"
-34-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:17:13-36
+34-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:19:13-36
 35            android:label="@string/app_name"
-35-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:18:13-45
+35-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:20:13-45
 36            android:theme="@style/Theme.AIproject10.NoActionBar" >
-36-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:19:13-65
+36-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:21:13-65
 37            <intent-filter>
-37-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:20:13-24:29
+37-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:22:13-26:29
 38                <action android:name="android.intent.action.MAIN" />
-38-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:21:17-69
-38-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:21:25-66
+38-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:23:17-69
+38-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:23:25-66
 39
 40                <category android:name="android.intent.category.LAUNCHER" />
-40-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:23:17-77
-40-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:23:27-74
+40-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:25:17-77
+40-->C:\Users\user\AI-project-1.0\AIproject10\app\src\main\AndroidManifest.xml:25:27-74
 41            </intent-filter>
 42        </activity>
 43
