@@ -4,10 +4,12 @@ package com.example.ai_project_10.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.ai_project_10.R;
@@ -17,20 +19,28 @@ import java.lang.String;
 
 public final class FragmentExpensesBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayoutCompat rootView;
 
   @NonNull
-  public final TextView textSlideshow;
+  public final Button addExpenseButton;
 
-  private FragmentExpensesBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView textSlideshow) {
+  @NonNull
+  public final ImageView imageView;
+
+  @NonNull
+  public final ListView listView;
+
+  private FragmentExpensesBinding(@NonNull LinearLayoutCompat rootView,
+      @NonNull Button addExpenseButton, @NonNull ImageView imageView, @NonNull ListView listView) {
     this.rootView = rootView;
-    this.textSlideshow = textSlideshow;
+    this.addExpenseButton = addExpenseButton;
+    this.imageView = imageView;
+    this.listView = listView;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayoutCompat getRoot() {
     return rootView;
   }
 
@@ -55,13 +65,26 @@ public final class FragmentExpensesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.text_slideshow;
-      TextView textSlideshow = ViewBindings.findChildViewById(rootView, id);
-      if (textSlideshow == null) {
+      id = R.id.addExpenseButton;
+      Button addExpenseButton = ViewBindings.findChildViewById(rootView, id);
+      if (addExpenseButton == null) {
         break missingId;
       }
 
-      return new FragmentExpensesBinding((ConstraintLayout) rootView, textSlideshow);
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
+        break missingId;
+      }
+
+      id = R.id.listView;
+      ListView listView = ViewBindings.findChildViewById(rootView, id);
+      if (listView == null) {
+        break missingId;
+      }
+
+      return new FragmentExpensesBinding((LinearLayoutCompat) rootView, addExpenseButton, imageView,
+          listView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

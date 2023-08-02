@@ -24,7 +24,7 @@
         android:id="@+id/nav_register"
         android:name="com.example.ai_project_10.RegisterFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_nav_register_to_nav_home"
             app:destination="@id/nav_home" />
@@ -72,65 +72,42 @@
         <action
             android:id="@+id/action_nav_expenses_to_nav_search"
             app:destination="@id/nav_budget" />
+        <action
+            android:id="@+id/action_nav_expenses_to_add_expense_fragment"
+            app:destination="@id/add_expense_fragment" />
     </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_discover"-->
-<!--        android:name="com.example.ai_project_10.ui.discover.DiscoverFragment"-->
-<!--        android:label="Discover"-->
-<!--        tools:layout="@layout/fragment_discover" />-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_library"-->
-<!--        android:name="com.example.ai_project_10.ui.library.LibraryFragment"-->
-<!--        android:label="Library"-->
-<!--        tools:layout="@layout/fragment_library" />-->
+    <fragment
+        android:id="@id/nav_reports"
+        android:name="com.example.ai_project_10.ReportsFragment"
+        android:label="Reports"
+        tools:layout="@layout/fragment_reports" >
+        <action
+            android:id="@+id/action_nav_reports_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_personalized"-->
-<!--        android:name="com.example.ai_project_10.ui.personalized.PersonalizedFragment"-->
-<!--        android:label="Personalized Recommendations"-->
-<!--        tools:layout="@layout/fragment_personalized" />-->
+    <fragment
+        android:id="@+id/nav_categories"
+        android:name="com.example.ai_project_10.CategoriesFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_nav_categories_to_nav_home2"
+            app:destination="@id/nav_home" />
+    </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_mood_playlists"-->
-<!--        android:name="com.example.ai_project_10.ui.mood.MoodPlaylistsFragment"-->
-<!--        android:label="Mood Playlists"-->
-<!--        tools:layout="@layout/fragment_mood_playlists" />-->
+    <fragment
+        android:id="@+id/add_expense_fragment"
+        android:name="com.example.ai_project_10.AddEditExpenseFragment"
+        android:label="Add Expense"
+        tools:layout="@layout/pop_up_window_add_expenses" >
+        <action
+            android:id="@+id/action_add_expense_fragment_to_nav_expenses"
+            app:destination="@id/nav_expenses" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_visualizations"-->
-<!--        android:name="com.example.ai_project_10.ui.visualizations.VisualizationsFragment"-->
-<!--        android:label="Visualizations"-->
-<!--        tools:layout="@layout/fragment_visualizations" />-->
+    </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_lyrics"-->
-<!--        android:name="com.example.ai_project_10.ui.lyrics.LyricsFragment"-->
-<!--        android:label="Lyrics"-->
-<!--        tools:layout="@layout/fragment_lyrics" />-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_settings"-->
-<!--        android:name="com.example.ai_project_10.ui.settings.SettingsFragment"-->
-<!--        android:label="Settings"-->
-<!--        tools:layout="@layout/fragment_settings" />-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/nav_account"-->
-<!--        android:name="com.example.ai_project_10.ui.account.AccountFragment"-->
-<!--        android:label="Account"-->
-<!--        tools:layout="@layout/fragment_account" />-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/nav_social"-->
-<!--        android:name="com.example.ai_project_10.ui.social.SocialFragment"-->
-<!--        android:label="Social Sharing"-->
-<!--        tools:layout="@layout/fragment_social" />-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/nav_help"-->
-<!--        android:name="com.example.ai_project_10.ui.help.HelpFragment"-->
-<!--        android:label="Help / Support"-->
-<!--        tools:layout="@layout/fragment_help" />-->
 </navigation>

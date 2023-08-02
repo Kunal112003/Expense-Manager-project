@@ -24,9 +24,9 @@ public class BudgetFragment extends Fragment {
 
         binding = FragmentBudgetBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.budget;
-        searchViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+//
+//        final TextView textView = binding.budget;
+//        searchViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

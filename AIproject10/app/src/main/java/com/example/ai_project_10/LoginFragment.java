@@ -121,19 +121,7 @@ public class LoginFragment extends Fragment {
 
 
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if(currentUser != null){
-//            Bundle bundle = new Bundle();
-//            bundle.putString("username", currentUser.getEmail());
-//            //send bundle to home fragment
-//            NavHostFragment.findNavController(LoginFragment.this)
-//                    .navigate(R.id.action_nav_login_to_nav_home, bundle);
-//        }
-//    }
+
 
 
     @SuppressLint("MissingInflatedId")

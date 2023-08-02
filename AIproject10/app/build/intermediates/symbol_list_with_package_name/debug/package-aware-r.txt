@@ -71,6 +71,7 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+array categories_array
 attr SharedValue
 attr SharedValueId
 attr action
@@ -1264,12 +1265,22 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue
+color blue2
+color blue3
+color blue4
+color blue5
+color blue6
+color blue7
+color blue8
+color blue9
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color brown
 color browser_actions_bg_grey
 color browser_actions_divider_color
 color browser_actions_text_color
@@ -1292,6 +1303,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color dark_gray
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1338,8 +1350,20 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
+color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_black
+color light_blue
+color light_brown
+color light_gray
+color light_green
+color light_orange
+color light_pink
+color light_purple
+color light_red
+color light_yellow
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -1808,6 +1832,8 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color orange
+color pink
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1820,6 +1846,7 @@ color purple_200
 color purple_500
 color purple_700
 color radiobutton_themeable_attribute_color
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -1840,6 +1867,7 @@ color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
 color white
+color yellow
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -2514,6 +2542,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_design2
+drawable background_gradient
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2603,6 +2633,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rounded_corners
+drawable rounded_corners2
 drawable side_nav_bar
 drawable test_custom_background
 drawable test_level_drawable
@@ -2659,6 +2691,7 @@ id accessibility_custom_action_9
 id actionDown
 id actionDownUp
 id actionUp
+id action_add_expense_fragment_to_nav_expenses
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -2677,6 +2710,8 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_nav_budget_to_nav_home
 id action_nav_budget_to_nav_playlists
+id action_nav_categories_to_nav_home2
+id action_nav_expenses_to_add_expense_fragment
 id action_nav_expenses_to_nav_home
 id action_nav_expenses_to_nav_search
 id action_nav_home_to_nav_playlists
@@ -2684,11 +2719,15 @@ id action_nav_home_to_nav_search
 id action_nav_login_to_nav_home
 id action_nav_login_to_nav_register
 id action_nav_register_to_nav_home
+id action_nav_reports_to_nav_home
 id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addExpenseButton
+id add_expense_button
+id add_expense_fragment
 id adjust_height
 id adjust_width
 id alertTitle
@@ -2725,7 +2764,6 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id budget
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2812,6 +2850,11 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id expenseAmount
+id expenseCategory
+id expenseDate
+id expenseName
+id expense_date
 id fab
 id fade
 id fill
@@ -2870,7 +2913,9 @@ id light
 id line1
 id line3
 id linear
+id linearLayout
 id listMode
+id listView
 id list_item
 id loading
 id locale
@@ -2935,6 +2980,7 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id nav_account
 id nav_budget
+id nav_categories
 id nav_controller_view_tag
 id nav_discover
 id nav_expenses
@@ -3097,7 +3143,6 @@ id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
-id text_slideshow
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -3261,6 +3306,7 @@ layout fragment_home
 layout fragment_login
 layout fragment_register
 layout fragment_reports
+layout item_expenses
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3314,6 +3360,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout pop_up_window_add_expenses
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

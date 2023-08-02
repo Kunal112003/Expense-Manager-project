@@ -4,22 +4,23 @@ public class Expenses {
     private int id; // Unique identifier for the expense entry
     private double amount; // The expense amount
     private long date; // Timestamp representing the date of the expense
-    private int categoryId; // Identifier for the expense category
-    private String notes; // Optional notes for the expense
+    private String categoryId; // Identifier for the expense category
+    private String expenseName; // Optional notes for the expense
 
-    public Expenses(double amount, long date, int categoryId, String notes) {
+    public Expenses(double amount, long date, String categoryId, String notes) {
         this.amount = amount;
         this.date = date;
+
         this.categoryId = categoryId;
-        this.notes = notes;
+        this.expenseName = expenseName;
     }
 
     // Getter and Setter methods for id, amount, date, categoryId, and notes
-    public int getId() {
+    public int getExpenseId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setExpenseId(int id) {
         this.id = id;
     }
 
@@ -39,20 +40,20 @@ public class Expenses {
         this.date = date;
     }
 
-    public int getCategoryId() {
+    public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 
     public String getNotes() {
-        return notes;
+        return expenseName;
     }
 
     public void setNotes(String notes) {
-        this.notes = notes;
+        this.expenseName = notes;
     }
 
     // You may add additional methods here as needed, such as toString() for debugging or serialization.
