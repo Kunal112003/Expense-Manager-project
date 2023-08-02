@@ -11,16 +11,16 @@
     tools:ignore="ExtraText">
 
 
-    >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Add Expense"
-        android:textSize="20sp"
-        android:textColor="@color/blue"
-        android:gravity="center"
-        android:background="@color/white"
-        />
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:text="Add Expense"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:gravity="center"-->
+<!--        android:background="@color/white"-->
+<!--        />-->
 
 
     <TextView
@@ -95,26 +95,28 @@
         android:textColor="@color/blue"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="290dp"
+
         />
 
-    <EditText
+    <DatePicker
         android:id="@+id/expense_date"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="325dp"
-        android:layout_marginLeft="10dp"
+        android:layout_width="254dp"
+        android:layout_height="234dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="320dp"
         android:layout_marginRight="10dp"
-        android:hint="enter expense date"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:spinnersShown="true"
         android:background="@drawable/rounded_corners"
-        android:paddingLeft="10dp"
-        android:inputType="date"
         />
+
 
     <Button
         android:id="@+id/add_expense_button"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="600dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:text="Add Expense"

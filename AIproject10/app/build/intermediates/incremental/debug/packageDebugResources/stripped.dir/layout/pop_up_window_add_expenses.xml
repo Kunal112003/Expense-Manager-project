@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="300dp"
-    android:layout_height="450dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/blue8"
+    android:background="@drawable/background_design2"
     android:layout_gravity="center"
     android:strokeColor="@color/blue"
     tools:context=".AddEditExpenseFragment"
@@ -14,7 +14,7 @@
     >
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="40dp"
         android:text="Add Expense"
         android:textSize="20sp"
         android:textColor="@color/blue"
@@ -25,7 +25,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:text="Expense Name:"
         android:textSize="17sp"
         android:textColor="@color/blue"
