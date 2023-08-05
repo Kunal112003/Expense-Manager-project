@@ -12,12 +12,12 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.ai_project_10.app-mergeDebugResources-40:/layout/pop_up_window_add_expenses.xml",
-        "source": "com.example.ai_project_10.app-main-43:/layout/pop_up_window_add_expenses.xml"
-    },
-    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_expenses.xml",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_expenses.xml"
+    },
+    {
+        "merged": "com.example.ai_project_10.app-mergeDebugResources-40:/layout/item_expenses.xml",
+        "source": "com.example.ai_project_10.app-main-43:/layout/item_expenses.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_playlists.xml",

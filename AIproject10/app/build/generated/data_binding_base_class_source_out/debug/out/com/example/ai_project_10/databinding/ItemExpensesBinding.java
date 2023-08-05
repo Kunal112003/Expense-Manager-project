@@ -28,12 +28,21 @@ public final class ItemExpensesBinding implements ViewBinding {
   @NonNull
   public final TextView expenseDate;
 
+  @NonNull
+  public final TextView expenseName;
+
+  @NonNull
+  public final RelativeLayout itemExpenses;
+
   private ItemExpensesBinding(@NonNull RelativeLayout rootView, @NonNull TextView expenseAmount,
-      @NonNull TextView expenseCategory, @NonNull TextView expenseDate) {
+      @NonNull TextView expenseCategory, @NonNull TextView expenseDate,
+      @NonNull TextView expenseName, @NonNull RelativeLayout itemExpenses) {
     this.rootView = rootView;
     this.expenseAmount = expenseAmount;
     this.expenseCategory = expenseCategory;
     this.expenseDate = expenseDate;
+    this.expenseName = expenseName;
+    this.itemExpenses = itemExpenses;
   }
 
   @Override
@@ -81,8 +90,16 @@ public final class ItemExpensesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.expenseName;
+      TextView expenseName = ViewBindings.findChildViewById(rootView, id);
+      if (expenseName == null) {
+        break missingId;
+      }
+
+      RelativeLayout itemExpenses = (RelativeLayout) rootView;
+
       return new ItemExpensesBinding((RelativeLayout) rootView, expenseAmount, expenseCategory,
-          expenseDate);
+          expenseDate, expenseName, itemExpenses);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

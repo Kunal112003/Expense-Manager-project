@@ -1,30 +1,27 @@
 package com.example.ai_project_10;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class User {
     public String username,email, password,user_id;
-    public Map<String, String> items = new HashMap<>();
-    public Map<Double, String> budgets = new HashMap<>();
-    public Map<Double, String> expenses = new HashMap<>();
+    public ArrayList<HashMap> items;
+    public ArrayList<HashMap> budgets;
 
+    public ArrayList<HashMap> expenses;
 
-    public User() {
-    }
-    public User(String username, String password, String email, String user_id, Map<String, String> items, Map<Double, String> budgets, Map<Double, String> expenses) {
+    public User(String username, String email, String password, String hashedUsername, ArrayList<HashMap> items, ArrayList<HashMap> budgets, ArrayList<HashMap> expenses) {
+
         this.username = username;
         this.password = password;
         this.email = email;
         this.user_id = user_id;
         this.items = items;
-        this.budgets = budgets;
+        this.budgets =budgets;
         this.expenses = expenses;
 
-
     }
-
-
 
 
     public String getUsername() {
@@ -47,27 +44,27 @@ public class User {
         return user_id;
     }
 
-    public Map<String, String> getItems() {
+    public ArrayList<HashMap> getItems() {
         return items;
     }
 
-    public void setItems(Map<String, String> items) {
+    public void setItems(ArrayList<HashMap> items) {
         this.items = items;
     }
 
-    public Map<Double, String> getBudgets() {
+    public ArrayList<HashMap> getBudgets() {
         return budgets;
     }
 
-    public void setBudgets(Map<Double, String> budgets) {
+    public void setBudgets(ArrayList<HashMap> budgets) {
         this.budgets = budgets;
     }
 
-    public Map<Double, String> getExpenses() {
+    public ArrayList<HashMap> getExpenses() {
         return expenses;
     }
 
-    public void setExpenses(Map<Double, String> expenses) {
+    public void setExpenses(ArrayList<HashMap> expenses) {
         this.expenses = expenses;
     }
 
@@ -82,6 +79,7 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
 
 

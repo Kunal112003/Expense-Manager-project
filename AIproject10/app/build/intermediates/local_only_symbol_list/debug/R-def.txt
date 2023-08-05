@@ -81,6 +81,7 @@ id expenseName
 id expense_date
 id fab
 id imageView
+id item_expenses
 id linearLayout
 id listView
 id loading

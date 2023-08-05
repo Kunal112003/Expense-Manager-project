@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
@@ -31,14 +32,14 @@ public final class PopUpWindowAddExpensesBinding implements ViewBinding {
   public final Spinner expenseCategory;
 
   @NonNull
-  public final EditText expenseDate;
+  public final DatePicker expenseDate;
 
   @NonNull
   public final EditText expenseName;
 
   private PopUpWindowAddExpensesBinding(@NonNull FrameLayout rootView,
       @NonNull Button addExpenseButton, @NonNull EditText expenseAmount,
-      @NonNull Spinner expenseCategory, @NonNull EditText expenseDate,
+      @NonNull Spinner expenseCategory, @NonNull DatePicker expenseDate,
       @NonNull EditText expenseName) {
     this.rootView = rootView;
     this.addExpenseButton = addExpenseButton;
@@ -94,7 +95,7 @@ public final class PopUpWindowAddExpensesBinding implements ViewBinding {
       }
 
       id = R.id.expense_date;
-      EditText expenseDate = ViewBindings.findChildViewById(rootView, id);
+      DatePicker expenseDate = ViewBindings.findChildViewById(rootView, id);
       if (expenseDate == null) {
         break missingId;
       }

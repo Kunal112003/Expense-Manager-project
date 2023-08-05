@@ -2900,6 +2900,7 @@ int id item1 0x7f090101
 int id item2 0x7f090102
 int id item3 0x7f090103
 int id item4 0x7f090104
+int id item_expenses 0x7f090227
 int id item_touch_helper_previous_elevation 0x7f090105
 int id jumpToEnd 0x7f090106
 int id jumpToStart 0x7f090107

@@ -2,7 +2,6 @@ package com.example.ai_project_10;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,22 +12,25 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.google.common.hash.Hashing;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 
 public class RegisterFragment extends Fragment {
 
+
+
+
         private EditText editTextEmail;
+
 
         private EditText editTextUsername;
 
@@ -42,7 +44,10 @@ public class RegisterFragment extends Fragment {
 
         String userid;
 
-        public static byte [] getSHA(String input) throws NoSuchAlgorithmException
+        private UsernamePersistent usernamePersistent;
+
+
+    public static byte [] getSHA(String input) throws NoSuchAlgorithmException
         {
             // Static getInstance method is called with hashing SHA
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -76,12 +81,18 @@ public class RegisterFragment extends Fragment {
         }
 
 
-
-        @SuppressLint("MissingInflatedId")
         @Override
-        public View onCreateView(
-                LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            // Inflate the layout for this fragment
+            View view = inflater.inflate(R.layout.fragment_register, container, false);
+            usernamePersistent = new UsernamePersistent(requireContext());
+
+            return view;
+        }
+
+        public View onViewCreated(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_register, container, false);
             editTextUsername = view.findViewById(R.id.username);
             editTextPassword = view.findViewById(R.id.password);
@@ -101,9 +112,16 @@ public class RegisterFragment extends Fragment {
                     String email = editTextEmail.getText().toString().trim();
                     String hashedUsername = "";
 
-                    Map<String, String> items = new HashMap<>();
-                    Map<Double, String> budgets = new HashMap<>();
-                    Map<Double, String> expenses = new HashMap<>();
+                       try {
+                            hashedUsername = sha256(username);
+                        } catch (NoSuchAlgorithmException e) {
+                            e.printStackTrace();
+                        }
+
+                    ArrayList<HashMap> items = new ArrayList<>();
+                    ArrayList<HashMap> budgets = new ArrayList<>();
+                    ArrayList<HashMap> expenses = new ArrayList<>();
+
 
 
 
@@ -178,6 +196,10 @@ public class RegisterFragment extends Fragment {
                                     .addOnFailureListener(e -> {
                                         Toast.makeText(getActivity(), "Failed to register user", Toast.LENGTH_LONG).show();
                                     });
+
+                    usernamePersistent.saveUsername(username);
+
+
 
                 }
             });

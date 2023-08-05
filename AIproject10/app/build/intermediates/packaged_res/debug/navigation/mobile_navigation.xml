@@ -100,7 +100,7 @@
 
     <fragment
         android:id="@+id/add_expense_fragment"
-        android:name="com.example.ai_project_10.AddEditExpenseFragment"
+        android:name="com.example.ai_project_10.ui.expenses.AddEditExpenseFragment"
         android:label="Add Expense"
         tools:layout="@layout/pop_up_window_add_expenses" >
         <action

@@ -2901,6 +2901,7 @@ id item1
 id item2
 id item3
 id item4
+id item_expenses
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart

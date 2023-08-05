@@ -7,7 +7,7 @@
     android:background="@drawable/background_design2"
     android:layout_gravity="center"
     android:strokeColor="@color/blue"
-    tools:context=".AddEditExpenseFragment"
+    tools:context=".ui.expenses.AddEditExpenseFragment"
     tools:ignore="ExtraText">
 
 

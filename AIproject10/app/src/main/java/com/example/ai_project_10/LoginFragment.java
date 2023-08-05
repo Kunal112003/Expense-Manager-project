@@ -119,7 +119,7 @@ public class LoginFragment extends Fragment {
 
 
 
-
+    private UsernamePersistent usernamePersistent;
 
 
 
@@ -130,6 +130,10 @@ public class LoginFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
+
+        usernamePersistent = new UsernamePersistent(requireContext());
+
+
         editTextUsername = view.findViewById(R.id.username);
         editTextPassword = view.findViewById(R.id.password);
 
@@ -181,13 +185,7 @@ public class LoginFragment extends Fragment {
 
                 checkIfUserExists(username,password);
 
-
-
-
-
-
-
-
+                usernamePersistent.saveUsername(username);
             }
         });
         return view;

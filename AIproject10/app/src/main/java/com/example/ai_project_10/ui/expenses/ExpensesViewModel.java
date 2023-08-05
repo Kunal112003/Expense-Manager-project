@@ -4,16 +4,20 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExpensesViewModel extends ViewModel {
+    private MutableLiveData<List<Expenses>> expensesListLiveData = new MutableLiveData<>();
+    private List<Expenses> expensesList = new ArrayList<>();
 
-    private final MutableLiveData<String> mText;
-
-    public ExpensesViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+    public void addExpense(Expenses expense) {
+        expensesList.add(expense);
+        expensesListLiveData.setValue(expensesList);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<List<Expenses>> getExpensesListLiveData() {
+        return expensesListLiveData;
     }
 }
+
