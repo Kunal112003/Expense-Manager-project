@@ -2643,6 +2643,8 @@ drawable tooltip_frame_light
 id ALT
 id BOTTOM_END
 id BOTTOM_START
+id BudgetCategory
+id BudgetLimit
 id CTRL
 id FUNCTION
 id META
@@ -2654,6 +2656,9 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id TextView_budget
+id UpdateBudget
+id UpdateDeleteBudget
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2710,6 +2715,7 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_nav_budget_to_nav_home
 id action_nav_budget_to_nav_playlists
+id action_nav_budget_to_update_budget_fragment
 id action_nav_categories_to_nav_home2
 id action_nav_expenses_to_add_expense_fragment
 id action_nav_expenses_to_nav_home
@@ -2722,6 +2728,7 @@ id action_nav_register_to_nav_home
 id action_nav_reports_to_nav_home
 id action_settings
 id action_text
+id action_update_budget_fragment_to_nav_budget
 id actions
 id activity_chooser_view_content
 id add
@@ -2765,6 +2772,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
+id button_addBudget
 id cache_measures
 id callMeasure
 id cancel_button
@@ -2915,8 +2923,10 @@ id line1
 id line3
 id linear
 id linearLayout
+id linearLayout_budgets
 id listMode
 id listView
+id listView_budget
 id list_item
 id loading
 id locale
@@ -3141,6 +3151,9 @@ id textView2
 id textView3
 id textView4
 id textView5
+id textView_budgetAmount
+id textView_budgetAmountSpent
+id textView_budgetName
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3171,6 +3184,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id update_budget_fragment
 id useLogo
 id username
 id vertical_only
@@ -3300,6 +3314,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout edit_budget
 layout fragment_budget
 layout fragment_categories
 layout fragment_expenses
@@ -3307,6 +3322,7 @@ layout fragment_home
 layout fragment_login
 layout fragment_register
 layout fragment_reports
+layout item_budgets
 layout item_expenses
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -3381,6 +3397,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout update_delete_budget
 menu activity_main_drawer
 menu example_menu
 menu example_menu2

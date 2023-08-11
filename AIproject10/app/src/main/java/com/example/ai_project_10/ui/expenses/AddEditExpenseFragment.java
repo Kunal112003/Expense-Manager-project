@@ -144,6 +144,10 @@ public class AddEditExpenseFragment extends Fragment {
                         .update("expenses", FieldValue.arrayUnion(expenseUser));
 
 
+                //add the expense amount to the budget collection in firebase
+                db.collection("Budget").document(category).collection(username).document(category).update("budgetProgress", FieldValue.increment(amount));
+
+
 
 
 

@@ -34,8 +34,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="142" />
-                            <option name="y" value="-350" />
+                            <option name="x" value="33" />
+                            <option name="y" value="-701" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -197,6 +197,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="update_budget_fragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-460" />
+                            <option name="y" value="-844" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

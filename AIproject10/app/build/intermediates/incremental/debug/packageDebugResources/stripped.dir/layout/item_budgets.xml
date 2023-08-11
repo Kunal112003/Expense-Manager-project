@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="275dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="230dp"
+       android:layout_marginTop="20dp"
+       android:layout_marginBottom="20dp"
+       android:layout_marginLeft="20dp"
+       android:layout_marginRight="20dp"
+       android:background="@drawable/rounded_corners2"
+       android:id="@+id/linearLayout_budgets"
+       >
+
+
+    <TextView
+       android:id="@+id/textView_budgetName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="20dp"
+       android:text="Budget Name"
+       android:textColor="@color/blue"
+       android:textSize="25sp"
+       android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_budgetAmount"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView_budgetName"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Budget Limit:"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+       <TextView
+           android:layout_width="160dp"
+           android:layout_height="50dp"
+           android:layout_below="@+id/textView_budgetName"
+           android:layout_marginLeft="20dp"
+           android:layout_marginTop="20dp"
+           android:layout_toRightOf="@+id/textView_budgetAmount"
+           android:text="100.00"
+           android:inputType="number"
+           android:textColor="@color/blue"
+           android:textSize="20sp"
+           android:textStyle="bold"
+           android:id="@+id/TextView_budget"
+
+           />
+
+
+
+
+
+
+
+
+       <TextView
+           android:layout_width="150dp"
+           android:layout_height="50dp"
+           android:layout_marginTop="140dp"
+           android:layout_marginLeft="20dp"
+           android:text="Amount Spent:"
+           android:textColor="@color/blue"
+           android:textSize="20sp"
+           android:textStyle="bold"
+              />
+
+         <TextView
+                android:id="@+id/textView_budgetAmountSpent"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="140dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textView_budgetAmount"
+                android:text="0"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+       
+
+   </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
