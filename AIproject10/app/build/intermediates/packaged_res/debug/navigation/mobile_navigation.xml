@@ -59,6 +59,9 @@
         <action
             android:id="@+id/action_nav_budget_to_nav_home"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_budget_to_update_budget_fragment"
+            app:destination="@id/update_budget_fragment" />
     </fragment>
 
     <fragment
@@ -109,5 +112,15 @@
 
     </fragment>
 
+
+    <fragment
+        android:id="@+id/update_budget_fragment"
+        android:name="com.example.ai_project_10.ui.budget.UpdateBudgetFragment"
+        android:label="Update Budget"
+        tools:layout="@layout/update_delete_budget">
+        <action
+            android:id="@+id/action_update_budget_fragment_to_nav_budget"
+            app:destination="@id/nav_budget" />
+    </fragment>
 
 </navigation>
