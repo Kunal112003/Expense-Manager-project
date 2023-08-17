@@ -9,7 +9,10 @@ import android.widget.TextView;
 
 import com.example.ai_project_10.R;
 
+import java.util.Calendar;
 import java.util.List;
+
+
 
 public class ExpensesArrayAdapter extends ArrayAdapter<Expenses> {
 
@@ -23,6 +26,22 @@ public class ExpensesArrayAdapter extends ArrayAdapter<Expenses> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_expenses, parent, false);
         }
+
+        //change expense adapter to empty start of every month
+        int currentMonth = Calendar.getInstance().get(Calendar.MONTH);
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+
+        //get expense date
+        String expense_date = expenses.getDate();
+
+        //get expense month
+        String expense_month = expense_date.substring(0,2);
+
+        //get expense year
+        String expense_year = expense_date.substring(6,10);
+
+
+
 
         TextView expenseName = convertView.findViewById(R.id.expenseName);
         TextView expenseAmount = convertView.findViewById(R.id.expenseAmount);

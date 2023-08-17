@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.ai_project_10.app-mergeDebugResources-39:/values-lv/values-lv.xml",
+            "outputFile": "com.example.ai_project_10.app-mergeDebugResources-40:/values-lv/values-lv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\cb2426f5ef63d7d2c773eaac85c877b0\\transformed\\browser-1.4.0\\res\\values-lv\\values-lv.xml",

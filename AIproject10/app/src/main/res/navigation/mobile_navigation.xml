@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_nav_home_to_nav_playlists"
             app:destination="@id/nav_expenses" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_discover"
+            app:destination="@id/nav_discover" />
     </fragment>
 
     <fragment
@@ -122,5 +125,17 @@
             android:id="@+id/action_update_budget_fragment_to_nav_budget"
             app:destination="@id/nav_budget" />
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_discover"
+        android:name="com.example.ai_project_10.ui.DiscoverFragment"
+        android:label="Discover"
+        tools:layout="@layout/fragment_discover" >
+        <action
+            android:id="@+id/action_nav_discover_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+
 
 </navigation>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,9 +52,14 @@ public class BudgetArrayAdapter extends ArrayAdapter<Budget> {
         TextView budgetAmount = convertView.findViewById(R.id.textView_budgetAmountSpent);
         TextView budgetLimit = convertView.findViewById(R.id.TextView_budget);
 
+        RelativeLayout relativeLayout = convertView.findViewById(R.id.linearLayout_budgets);
+
 
         budgetName.setText(budget.getCategory());
         budgetLimit.setText(String.valueOf(budget.getBudgetLimit()));
+
+//        System.out.println("budget.getCategory() = " + budget.getCategory());
+//        System.out.println("budget.getBudgetLimit() = " + budget.getBudgetLimit());
 
 
 
@@ -70,7 +76,23 @@ public class BudgetArrayAdapter extends ArrayAdapter<Budget> {
                                     DocumentSnapshot document = task.getResult();
                                     if (document.exists()) {
                                         spendingAmount[0] = document.getDouble("budgetProgress");
+
+
+
+
                                         budgetAmount.setText(String.valueOf(spendingAmount[0]));
+//                                        System.out.println("spendingAmount[0] = " + spendingAmount[0]);
+
+                                        if(spendingAmount[0] > budget.getBudgetLimit()){
+                                            //set text view to red
+                                            budgetName.setTextColor(getContext().getResources().getColor(R.color.red));
+
+
+
+
+
+
+                                    }
                                     }
                                 }
                             });
@@ -80,32 +102,10 @@ public class BudgetArrayAdapter extends ArrayAdapter<Budget> {
 
 
 
-//        System.out.println(bu/dget.getCategory()+": " + spendingAmount);
 
-        budgetAmount.setText(String.valueOf(spendingAmount[0]));
 
-        //check if the budget is over the limit
-//        if (spendingAmount[0] > budget.getBudgetLimit()) {
-//            budgetAmount.setTextColor(getContext().getResources().getColor(R.color.red));
-//            budgetName.setTextColor(getContext().getResources().getColor(R.color.red));
-//        } else {
-//            budgetAmount.setTextColor(getContext().getResources().getColor(R.color.green));
-//            budgetName.setTextColor(getContext().getResources().getColor(R.color.green));
-//        }
 
-        //if spending amount is over the limit, give warning message
-        if (spendingAmount[0] > budget.getBudgetLimit()) {
-            budgetAmount.setTextColor(getContext().getResources().getColor(R.color.red));
-            budgetName.setTextColor(getContext().getResources().getColor(R.color.red));
-            budgetLimit.setTextColor(getContext().getResources().getColor(R.color.red));
-            budgetLimit.setText("You are over the limit!");
 
-        } else {
-            budgetAmount.setTextColor(getContext().getResources().getColor(R.color.green));
-            budgetName.setTextColor(getContext().getResources().getColor(R.color.green));
-            budgetLimit.setTextColor(getContext().getResources().getColor(R.color.green));
-            budgetLimit.setText("You are under the limit!");
-        }
 
 
 

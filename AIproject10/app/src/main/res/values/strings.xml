@@ -36,4 +36,14 @@
         <item>Personal Care</item>
         <item>Other</item>
     </string-array>
+
+
+    <string-array name="time_ranges">
+
+        <item>Total</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+    </string-array>
+
+
 </resources>

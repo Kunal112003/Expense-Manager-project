@@ -14,6 +14,12 @@
         <item>Personal Care</item>
         <item>Other</item>
     </string-array>
+    <string-array name="time_ranges">
+
+        <item>Total</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+    </string-array>
     <color name="back_color">#FF000000</color>
     <color name="black">#FF000000</color>
     <color name="blue">#0075e7</color>

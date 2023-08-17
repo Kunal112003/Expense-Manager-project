@@ -2,63 +2,72 @@ package com.example.ai_project_10;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CategoriesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CategoriesFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private String CategoryName;
+    private Double CategoryAmountSpent;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
 
     public CategoriesFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CategoriesFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CategoriesFragment newInstance(String param1, String param2) {
+    public CategoriesFragment(String categoryName, Double categoryAmountSpent) {
+        CategoryName = categoryName;
+        CategoryAmountSpent = categoryAmountSpent;
+    }
+
+    public static CategoriesFragment newInstance(String categoryName, Double amountSpent) {
         CategoriesFragment fragment = new CategoriesFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString("CategoryName", categoryName);
+        args.putDouble("CategoryAmountSpent", amountSpent);
         fragment.setArguments(args);
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categories, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_categories, container, false);
+
+
+        Bundle args = getArguments();
+        if (args != null) {
+            CategoryName = args.getString("CategoryName");
+            CategoryAmountSpent = args.getDouble("CategoryAmountSpent");
+        }
+
+        System.out.println(CategoryName);
+        System.out.println(CategoryAmountSpent);
+
+        TextView CategoryNameTextView = view.findViewById(R.id.categoryNameTextView);
+        TextView CategoryAmountSpentTextView = view.findViewById(R.id.amountSpentTextView);
+
+        CategoryNameTextView.setText(CategoryName);
+        CategoryAmountSpentTextView.setText(String.valueOf(CategoryAmountSpent));
+
+        System.out.println(CategoryNameTextView.getText());
+        System.out.println(CategoryAmountSpentTextView.getText());
+
+
+
+        return view;
+
     }
+
+
 }

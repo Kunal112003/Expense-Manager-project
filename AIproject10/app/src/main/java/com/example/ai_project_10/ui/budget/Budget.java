@@ -6,6 +6,8 @@ public class Budget {
 
     private String category; // The name of the category
 
+
+
     public Budget() {
         // No-argument constructor required for Firestore deserialization
     }

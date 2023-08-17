@@ -11,7 +11,17 @@ public class User {
 
     public ArrayList<HashMap> expenses;
 
-    public User(String username, String email, String password, String hashedUsername, ArrayList<HashMap> items, ArrayList<HashMap> budgets, ArrayList<HashMap> expenses) {
+    //monthly expenses and total expenses
+
+    public double totalExpenses;
+
+public User() {
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
+
+
+
+    public User(String username, String email, String password, String hashedUsername, ArrayList<HashMap> items, ArrayList<HashMap> budgets, ArrayList<HashMap> expenses,  double totalExpenses) {
 
         this.username = username;
         this.password = password;
@@ -20,6 +30,7 @@ public class User {
         this.items = items;
         this.budgets =budgets;
         this.expenses = expenses;
+        this.totalExpenses = totalExpenses;
 
     }
 
@@ -80,6 +91,14 @@ public class User {
         this.email = email;
     }
 
+
+    public double getTotalExpenses() {
+        return totalExpenses;
+    }
+
+    public void setTotalExpenses(double totalExpenses) {
+        this.totalExpenses = totalExpenses;
+    }
 }
 
 

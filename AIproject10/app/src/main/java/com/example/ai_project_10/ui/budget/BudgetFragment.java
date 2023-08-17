@@ -140,14 +140,14 @@ public class BudgetFragment extends Fragment {
                                 //get category id by hashing the category name
                                 Integer categoryID = (categoryName.hashCode());
 
-                                Budget budget = new Budget(categoryID, 1000, categoryName);
+                                Budget budget = new Budget(categoryID, 0.0, categoryName);
 
                                 budgetArrayAdapter.add(budget);
 
                                 db.collection("Budget")
                                         .document(categoryName)
                                         .collection(username)
-                                        .document("Budget")
+                                        .document(categoryName)
                                         .set(budget);
 
                                 budgetArrayAdapter.notifyDataSetChanged();

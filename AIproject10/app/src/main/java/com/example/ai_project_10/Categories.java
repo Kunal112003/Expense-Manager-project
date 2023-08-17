@@ -4,8 +4,19 @@ public class Categories {
     private int id; // Unique identifier for the category
     private String name; // The name of the expense category
 
-    public Categories(String name) {
+    private Double amountSpent; // The amount spent on the category
+
+    public Categories(String name, Double amountSpent) {
         this.name = name;
+        this.amountSpent = amountSpent;
+    }
+
+    public Double getAmountSpent() {
+        return amountSpent;
+    }
+
+    public void setAmountSpent(Double amountSpent) {
+        this.amountSpent = amountSpent;
     }
 
     // Getter and Setter methods for id and name
