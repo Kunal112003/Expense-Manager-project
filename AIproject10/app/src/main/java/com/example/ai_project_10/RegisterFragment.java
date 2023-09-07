@@ -88,12 +88,7 @@ public class RegisterFragment extends Fragment {
             View view = inflater.inflate(R.layout.fragment_register, container, false);
             usernamePersistent = new UsernamePersistent(requireContext());
 
-            return view;
-        }
 
-        public View onViewCreated(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.fragment_register, container, false);
             editTextUsername = view.findViewById(R.id.username);
             editTextPassword = view.findViewById(R.id.password);
             editTextEmail = view.findViewById(R.id.email);
@@ -112,15 +107,19 @@ public class RegisterFragment extends Fragment {
                     String email = editTextEmail.getText().toString().trim();
                     String hashedUsername = "";
 
-                       try {
-                            hashedUsername = sha256(username);
-                        } catch (NoSuchAlgorithmException e) {
-                            e.printStackTrace();
-                        }
+                    try {
+                        hashedUsername = sha256(username);
+                    } catch (NoSuchAlgorithmException e) {
+                        e.printStackTrace();
+                    }
 
                     ArrayList<HashMap> items = new ArrayList<>();
                     ArrayList<HashMap> budgets = new ArrayList<>();
                     ArrayList<HashMap> expenses = new ArrayList<>();
+
+                    Double TotalExpense = 0.0;
+
+
 
 
 
@@ -153,59 +152,66 @@ public class RegisterFragment extends Fragment {
 
 
 
-                            User user = new User(username,email, password, hashedUsername, items, budgets, expenses); // Create a new user object with username and email
-                            FirebaseFirestore db = FirebaseFirestore.getInstance();
-                            //set user
-                            user.setEmail(email);
-                            user.setPassword(password);
-                            user.setUsername(username);
-                            user.setItems(items);
-                            user.setBudgets(budgets);
-                            user.setExpenses(expenses);
-
-
-
-                            try {
-                                hashedUsername = sha256(username);
-                            } catch (NoSuchAlgorithmException e) {
-                                e.printStackTrace();
-                            }
-
-                            user.setUser_id(hashedUsername);
-
-                            System.out.println(hashedUsername);
+                    User user = new User(username,email, password, hashedUsername, items, budgets, expenses,TotalExpense); // Create a new user object with username and email
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    //set user
+                    user.setEmail(email);
+                    user.setPassword(password);
+                    user.setUsername(username);
+                    user.setItems(items);
+                    user.setBudgets(budgets);
+                    user.setExpenses(expenses);
+                    user.setTotalExpenses(TotalExpense);
 
 
 
 
 
-                            // Store the user data in Firestore under a document with the username as its ID
+                    try {
+                        hashedUsername = sha256(username);
+                    } catch (NoSuchAlgorithmException e) {
+                        e.printStackTrace();
+                    }
+
+                    user.setUser_id(hashedUsername);
+
+                    System.out.println(hashedUsername);
+
+
+
+
+
+                    // Store the user data in Firestore under a document with the username as its ID
                     String finalHashedUsername = hashedUsername;
                     db.collection("Users")
-                                    .document(username)
-                                    .set(user)
-                                    .addOnSuccessListener(aVoid -> {
-                                        Toast.makeText(getActivity(), "User has been registered successfully", Toast.LENGTH_LONG).show();
-                                        Bundle bundle = new Bundle();
-                                        bundle.putString("username", username);
-                                        bundle.putString("userid", finalHashedUsername);
-                                        //send bundle to home fragment
-                                        NavHostFragment.findNavController(RegisterFragment.this)
-                                                .navigate(R.id.action_nav_register_to_nav_home, bundle);
-                                    })
-                                    .addOnFailureListener(e -> {
-                                        Toast.makeText(getActivity(), "Failed to register user", Toast.LENGTH_LONG).show();
-                                    });
+                            .document(username)
+                            .set(user)
+                            .addOnSuccessListener(aVoid -> {
+                                Toast.makeText(getActivity(), "User has been registered successfully", Toast.LENGTH_LONG).show();
+                                Bundle bundle = new Bundle();
+                                bundle.putString("username", username);
+                                bundle.putString("userid", finalHashedUsername);
+                                //send bundle to home fragment
+                                NavHostFragment.findNavController(RegisterFragment.this)
+                                        .navigate(R.id.action_nav_register_to_nav_home, bundle);
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(getActivity(), "Failed to register user", Toast.LENGTH_LONG).show();
+                            });
 
                     usernamePersistent.saveUsername(username);
+
 
 
 
                 }
             });
 
+
             return view;
         }
+
+
     }
 
 

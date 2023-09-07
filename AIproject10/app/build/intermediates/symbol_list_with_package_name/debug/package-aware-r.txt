@@ -72,6 +72,7 @@ animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
 array categories_array
+array time_ranges
 attr SharedValue
 attr SharedValueId
 attr action
@@ -227,6 +228,7 @@ attr carousel_previousState
 attr carousel_touchUpMode
 attr carousel_touchUp_dampeningFactor
 attr carousel_touchUp_velocityThreshold
+attr centerColor
 attr chainUseRtl
 attr checkMarkCompat
 attr checkMarkTint
@@ -261,6 +263,8 @@ attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
 attr chipSurfaceColor
+attr circleCenterX
+attr circleCenterY
 attr circleCrop
 attr circleRadius
 attr circularProgressIndicatorStyle
@@ -733,6 +737,7 @@ attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
 attr logo
 attr logoDescription
+attr mainColor
 attr marginHorizontal
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogButtonSpacerVisibility
@@ -778,6 +783,7 @@ attr maxCharacterCount
 attr maxHeight
 attr maxImageSize
 attr maxLines
+attr maxRadius
 attr maxVelocity
 attr maxWidth
 attr measureWithLargestChild
@@ -787,6 +793,7 @@ attr methodName
 attr mimeType
 attr minHeight
 attr minHideDelay
+attr minRadius
 attr minSeparation
 attr minTouchTargetSize
 attr minWidth
@@ -989,8 +996,12 @@ attr state_above_anchor
 attr state_collapsed
 attr state_collapsible
 attr state_dragged
+attr state_initializing_tts
 attr state_liftable
 attr state_lifted
+attr state_listening
+attr state_speaking
+attr state_waiting
 attr statusBarBackground
 attr statusBarForeground
 attr statusBarScrim
@@ -1257,6 +1268,7 @@ color abc_tint_spinner
 color abc_tint_switch_track
 color accent_material_dark
 color accent_material_light
+color aidialog_background
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
 color back_color
@@ -1354,6 +1366,7 @@ color gray
 color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color icon_orange_color
 color light_black
 color light_blue
 color light_brown
@@ -1679,6 +1692,7 @@ color m3_timepicker_display_text_color
 color m3_timepicker_secondary_text_button_ripple_color
 color m3_timepicker_secondary_text_button_text_color
 color m3_tonal_button_ripple_color_selector
+color main_bg_color
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1779,6 +1793,8 @@ color material_timepicker_button_stroke
 color material_timepicker_clock_text_color
 color material_timepicker_clockface
 color material_timepicker_modebutton_tint
+color mic_button_halo
+color mic_colors
 color mtrl_btn_bg_color_selector
 color mtrl_btn_ripple_color
 color mtrl_btn_stroke_color_selector
@@ -2227,6 +2243,9 @@ dimen material_textinput_min_width
 dimen material_time_picker_minimum_screen_height
 dimen material_time_picker_minimum_screen_width
 dimen material_timepicker_dialog_buttons_margin_top
+dimen mic_button_halo_radius_max
+dimen mic_button_halo_radius_min
+dimen mic_button_size
 dimen mtrl_alert_dialog_background_inset_bottom
 dimen mtrl_alert_dialog_background_inset_end
 dimen mtrl_alert_dialog_background_inset_start
@@ -2571,6 +2590,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable cube
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2610,6 +2630,8 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable mic_control
+drawable microphone_control
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -2636,6 +2658,8 @@ drawable notify_panel_notification_icon_bg
 drawable rounded_corners
 drawable rounded_corners2
 drawable side_nav_bar
+drawable speaker
+drawable speaker_silent
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -2643,6 +2667,8 @@ drawable tooltip_frame_light
 id ALT
 id BOTTOM_END
 id BOTTOM_START
+id BudgetCategory
+id BudgetLimit
 id CTRL
 id FUNCTION
 id META
@@ -2654,6 +2680,9 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id TextView_budget
+id UpdateBudget
+id UpdateDeleteBudget
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2710,10 +2739,13 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_nav_budget_to_nav_home
 id action_nav_budget_to_nav_playlists
+id action_nav_budget_to_update_budget_fragment
 id action_nav_categories_to_nav_home2
+id action_nav_discover_to_nav_home
 id action_nav_expenses_to_add_expense_fragment
 id action_nav_expenses_to_nav_home
 id action_nav_expenses_to_nav_search
+id action_nav_home_to_nav_discover
 id action_nav_home_to_nav_playlists
 id action_nav_home_to_nav_search
 id action_nav_login_to_nav_home
@@ -2722,6 +2754,7 @@ id action_nav_register_to_nav_home
 id action_nav_reports_to_nav_home
 id action_settings
 id action_text
+id action_update_budget_fragment_to_nav_budget
 id actions
 id activity_chooser_view_content
 id add
@@ -2735,6 +2768,7 @@ id aligned
 id all
 id allStates
 id always
+id amountSpentTextView
 id androidx_window_activity_scope
 id animateToEnd
 id animateToStart
@@ -2748,6 +2782,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id barChart
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2765,10 +2800,14 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
+id button_addBudget
 id cache_measures
 id callMeasure
 id cancel_button
 id carryVelocity
+id categoriesFragmentLayout
+id categoryLayout
+id categoryNameTextView
 id center
 id center_horizontal
 id center_vertical
@@ -2915,8 +2954,10 @@ id line1
 id line3
 id linear
 id linearLayout
+id linearLayout_budgets
 id listMode
 id listView
+id listView_budget
 id list_item
 id loading
 id locale
@@ -2945,6 +2986,8 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id message
+id micButton
+id micContainer
 id middle
 id mini
 id mobile_navigation
@@ -3024,16 +3067,20 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id partialResultsTextView
 id password
 id password_toggle
 id path
 id pathRelative
 id peekHeight
 id percent
+id pieChart
 id pin
 id position
 id postLayout
+id press
 id profile_pic
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -3090,6 +3137,7 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
+id spinner
 id spline
 id split_action_bar
 id spread
@@ -3139,8 +3187,10 @@ id textTop
 id textView
 id textView2
 id textView3
-id textView4
 id textView5
+id textView_budgetAmount
+id textView_budgetAmountSpent
+id textView_budgetName
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3151,8 +3201,10 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id tips
 id title
 id titleDividerNoCustom
+id titleTextView
 id title_template
 id toggle
 id toolbar
@@ -3171,9 +3223,11 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id update_budget_fragment
 id useLogo
 id username
 id vertical_only
+id viewPager
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3280,6 +3334,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout aidialog
 layout app_bar_main
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3300,13 +3355,16 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout edit_budget
 layout fragment_budget
 layout fragment_categories
+layout fragment_discover
 layout fragment_expenses
 layout fragment_home
 layout fragment_login
 layout fragment_register
 layout fragment_reports
+layout item_budgets
 layout item_expenses
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -3381,6 +3439,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout update_delete_budget
 menu activity_main_drawer
 menu example_menu
 menu example_menu2
@@ -3389,7 +3448,9 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation mobile_navigation
 plurals mtrl_badge_content_description
+raw credential
 raw firebase_common_keep
+raw version_config
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3449,6 +3510,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
+string default_aidialog_title
 string default_web_client_id
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -3579,6 +3641,9 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
+style ApiAi
+style ApiAi_FullScreenDialog
+style ApiAi_Microphone
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
@@ -4675,6 +4740,7 @@ styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width 
 styleable LinearProgressIndicator indeterminateAnimationType indicatorDirectionLinear
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable MaskedColorView mainColor
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogButtonSpacerVisibility materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialAutoCompleteTextView android_inputType
@@ -4732,6 +4798,7 @@ styleable SignInButton buttonSize colorScheme scopeUris
 styleable Slider android_enabled android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius thumbStrokeColor thumbStrokeWidth tickColor tickColorActive tickColorInactive tickVisible trackColor trackColorActive trackColorInactive trackHeight
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha backgroundTint backgroundTintMode elevation maxActionInlineWidth
+styleable SoundLevelButton centerColor circleCenterX circleCenterY haloColor maxRadius minRadius state_initializing_tts state_listening state_speaking state_waiting
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable SplitPairFilter primaryActivityName secondaryActivityAction secondaryActivityName
 styleable SplitPairRule clearTop finishPrimaryWithSecondary finishSecondaryWithPrimary splitLayoutDirection splitMinSmallestWidth splitMinWidth splitRatio

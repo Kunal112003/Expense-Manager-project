@@ -5,12 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import androidx.viewpager2.widget.ViewPager2;
 import com.example.ai_project_10.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -24,29 +26,33 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ImageView profilePic;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final TextView textView2;
 
   @NonNull
   public final TextView textView3;
 
   @NonNull
-  public final TextView textView4;
+  public final TextView textView5;
 
   @NonNull
-  public final TextView textView5;
+  public final ViewPager2 viewPager;
 
   @NonNull
   public final TextView welcomeText;
 
   private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView profilePic,
-      @NonNull TextView textView2, @NonNull TextView textView3, @NonNull TextView textView4,
-      @NonNull TextView textView5, @NonNull TextView welcomeText) {
+      @NonNull ProgressBar progressBar, @NonNull TextView textView2, @NonNull TextView textView3,
+      @NonNull TextView textView5, @NonNull ViewPager2 viewPager, @NonNull TextView welcomeText) {
     this.rootView = rootView;
     this.profilePic = profilePic;
+    this.progressBar = progressBar;
     this.textView2 = textView2;
     this.textView3 = textView3;
-    this.textView4 = textView4;
     this.textView5 = textView5;
+    this.viewPager = viewPager;
     this.welcomeText = welcomeText;
   }
 
@@ -83,6 +89,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.textView2;
       TextView textView2 = ViewBindings.findChildViewById(rootView, id);
       if (textView2 == null) {
@@ -95,15 +107,15 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView4;
-      TextView textView4 = ViewBindings.findChildViewById(rootView, id);
-      if (textView4 == null) {
-        break missingId;
-      }
-
       id = R.id.textView5;
       TextView textView5 = ViewBindings.findChildViewById(rootView, id);
       if (textView5 == null) {
+        break missingId;
+      }
+
+      id = R.id.viewPager;
+      ViewPager2 viewPager = ViewBindings.findChildViewById(rootView, id);
+      if (viewPager == null) {
         break missingId;
       }
 
@@ -113,8 +125,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, profilePic, textView2, textView3,
-          textView4, textView5, welcomeText);
+      return new FragmentHomeBinding((ConstraintLayout) rootView, profilePic, progressBar,
+          textView2, textView3, textView5, viewPager, welcomeText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

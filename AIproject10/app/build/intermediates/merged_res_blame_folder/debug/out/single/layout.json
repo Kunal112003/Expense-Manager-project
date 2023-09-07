@@ -1,66 +1,74 @@
 [
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_register.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_register.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\nav_header_main.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\nav_header_main.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_reports.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_reports.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\fragment_reports.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\fragment_reports.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\item_budgets.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\item_budgets.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_expenses.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_expenses.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\fragment_discover.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\fragment_discover.xml"
     },
     {
-        "merged": "com.example.ai_project_10.app-mergeDebugResources-40:/layout/item_expenses.xml",
-        "source": "com.example.ai_project_10.app-main-43:/layout/item_expenses.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\pop_up_window_add_expenses.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\pop_up_window_add_expenses.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_playlists.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_playlists.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\fragment_register.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\fragment_register.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_home.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\item_expenses.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\item_expenses.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_login.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_login.xml"
+        "merged": "com.example.ai_project_10.app-mergeDebugResources-41:/layout/fragment_categories.xml",
+        "source": "com.example.ai_project_10.app-main-44:/layout/fragment_categories.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\content_main.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\content_main.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\fragment_expenses.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\fragment_expenses.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\app_bar_main.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\app_bar_main.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\edit_budget.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\edit_budget.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\item_expenses.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\item_expenses.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\fragment_login.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\fragment_login.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_budget.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_budget.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\fragment_categories.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\fragment_categories.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\pop_up_window_add_expenses.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\pop_up_window_add_expenses.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\nav_header_main.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\nav_header_main.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\update_delete_budget.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\update_delete_budget.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_categories.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_categories.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\app_bar_main.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\app_bar_main.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-40:\\layout\\fragment_search.xml",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-43:\\layout\\fragment_search.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\content_main.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\fragment_budget.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\fragment_budget.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-mergeDebugResources-41:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.0\\com.example.ai_project_10.app-main-44:\\layout\\activity_main.xml"
     }
 ]

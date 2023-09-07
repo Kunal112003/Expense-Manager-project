@@ -5,7 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,11 +21,25 @@ public final class FragmentCategoriesBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final ImageView imageView;
+  public final TextView amountSpentTextView;
 
-  private FragmentCategoriesBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView) {
+  @NonNull
+  public final FrameLayout categoriesFragmentLayout;
+
+  @NonNull
+  public final LinearLayout categoryLayout;
+
+  @NonNull
+  public final TextView categoryNameTextView;
+
+  private FragmentCategoriesBinding(@NonNull FrameLayout rootView,
+      @NonNull TextView amountSpentTextView, @NonNull FrameLayout categoriesFragmentLayout,
+      @NonNull LinearLayout categoryLayout, @NonNull TextView categoryNameTextView) {
     this.rootView = rootView;
-    this.imageView = imageView;
+    this.amountSpentTextView = amountSpentTextView;
+    this.categoriesFragmentLayout = categoriesFragmentLayout;
+    this.categoryLayout = categoryLayout;
+    this.categoryNameTextView = categoryNameTextView;
   }
 
   @Override
@@ -54,13 +69,28 @@ public final class FragmentCategoriesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.imageView;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
-      if (imageView == null) {
+      id = R.id.amountSpentTextView;
+      TextView amountSpentTextView = ViewBindings.findChildViewById(rootView, id);
+      if (amountSpentTextView == null) {
         break missingId;
       }
 
-      return new FragmentCategoriesBinding((FrameLayout) rootView, imageView);
+      FrameLayout categoriesFragmentLayout = (FrameLayout) rootView;
+
+      id = R.id.categoryLayout;
+      LinearLayout categoryLayout = ViewBindings.findChildViewById(rootView, id);
+      if (categoryLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.categoryNameTextView;
+      TextView categoryNameTextView = ViewBindings.findChildViewById(rootView, id);
+      if (categoryNameTextView == null) {
+        break missingId;
+      }
+
+      return new FragmentCategoriesBinding((FrameLayout) rootView, amountSpentTextView,
+          categoriesFragmentLayout, categoryLayout, categoryNameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

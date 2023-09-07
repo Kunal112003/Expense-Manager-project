@@ -34,8 +34,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="142" />
-                            <option name="y" value="-350" />
+                            <option name="x" value="33" />
+                            <option name="y" value="-701" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -46,6 +46,11 @@
                               </value>
                             </entry>
                             <entry key="action_nav_budget_to_nav_playlists">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_nav_budget_to_update_budget_fragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -67,6 +72,27 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_nav_categories_to_nav_home2">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="nav_discover">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_nav_discover_to_nav_home">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -118,6 +144,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_nav_home_to_nav_discover">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_nav_home_to_nav_playlists">
                               <value>
                                 <LayoutPositions />
@@ -192,6 +223,27 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_nav_reports_to_nav_home">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="update_budget_fragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-460" />
+                            <option name="y" value="-844" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_update_budget_fragment_to_nav_budget">
                               <value>
                                 <LayoutPositions />
                               </value>

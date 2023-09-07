@@ -1,5 +1,7 @@
 package com.example.ai_project_10.ui.expenses;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class AddEditExpenseFragment extends Fragment {
@@ -99,12 +103,38 @@ public class AddEditExpenseFragment extends Fragment {
         addExpenseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+
+                // Get the current date and month
+                Calendar calendar = new GregorianCalendar();
+                int currentYear = calendar.get(Calendar.YEAR);
+                int currentMonth = calendar.get(Calendar.MONTH)+1;
+
+
+//                //Monthly expenses and total expenses
+//                Double monthlyExpenses = 0.0;
+//                Double totalExpenses = 0.0;
+
+
+
                 // Get the values entered by the user
                 double amount = Double.parseDouble(editTextAmount.getText().toString());
+
+                db.collection("users").document(username).update("TotalExpense", FieldValue.increment(amount));
+
+
+
+
                 // Retrieve the selected date from the DatePicker
                 int day = datePicker.getDayOfMonth();
                 int month = datePicker.getMonth() + 1; // Month is zero-indexed, so add 1
                 int year = datePicker.getYear();
+
+
+
                 // Create a formatted date string (you can choose the format you prefer)
                 String date = String.format("%02d/%02d/%04d", month, day, year);
 
@@ -113,11 +143,16 @@ public class AddEditExpenseFragment extends Fragment {
 
                 //category
                 String category = spinner.getSelectedItem().toString();
-                String categoryID = String.valueOf(Math.abs(category.hashCode()));
+//                String categoryID = String.valueOf(Math.abs(category.hashCode()));
+                String categoryID = category;
+
+
 
 
                 // Create a new random expense ID
                 String expenseID = String.valueOf(Math.abs(name.hashCode()));
+
+
 
 
                 //expensesListUser
@@ -125,7 +160,7 @@ public class AddEditExpenseFragment extends Fragment {
                 HashMap<String, Double> expenseUser = new HashMap<>();
 
 
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
                 // Create a new expense object
                 Expenses expense = new Expenses(expenseID, amount, date, categoryID, name,username);
@@ -139,9 +174,34 @@ public class AddEditExpenseFragment extends Fragment {
                 //add to the end expenses array list in firebase under users collection
                 expenseUser.put(expenseID, amount);
                 expensesListUser.add(expenseUser);
-                db.collection("users")
+                db.collection("Users")
                         .document(username)
                         .update("expenses", FieldValue.arrayUnion(expenseUser));
+
+
+                //add the expense amount to the budget collection in firebase if the date is the same as the current
+
+
+
+
+                //add the expense amount to the budget collection in firebase if the date is the same as the current
+                if (currentMonth == month && currentYear == year) {
+                    db.collection("Budget").document(category).collection(username).document(category).update("budgetProgress", FieldValue.increment(amount));
+                }
+
+                //set the budget progress to 0 1st of every month
+                // Check if it's the 1st of the month
+                if (calendar.get(Calendar.DAY_OF_MONTH) == 1) {
+                    // Set the budget progress to 0 on the 1st of every month
+                    db.collection("Budget").document(category).collection(username).document(category)
+                            .update("budgetProgress", 0);
+                }
+
+
+                //if the expense is from the previous month dont add it to the budget progress
+                if (currentMonth != month && currentYear == year) {
+                    db.collection("Budget").document(category).collection(username).document(category).update("budgetProgress", FieldValue.increment(-amount));
+                }
 
 
 
@@ -166,6 +226,7 @@ public class AddEditExpenseFragment extends Fragment {
 
             }
         });
+
 
 
 

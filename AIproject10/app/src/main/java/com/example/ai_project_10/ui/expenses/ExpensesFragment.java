@@ -21,6 +21,7 @@ import com.example.ai_project_10.R;
 import com.example.ai_project_10.UsernamePersistent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -28,6 +29,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import android.app.AlertDialog;
+
 
 
 public class ExpensesFragment extends Fragment {
@@ -44,6 +47,25 @@ public class ExpensesFragment extends Fragment {
 
     public ExpensesFragment() {
         // Required empty public constructor
+    }
+
+
+    public void deleteExpense(String id) {
+        // Delete the expense from the database and from the user's expenses list and notify the changes and reduce the
+
+
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("expenses")
+                .document(id)
+                .delete()
+                .addOnSuccessListener(aVoid -> {
+                    Log.d(TAG, "Expense deleted");
+                })
+                .addOnFailureListener(e -> {
+                    Log.w(TAG, "Error deleting expense", e);
+                });
     }
 
 
@@ -69,6 +91,21 @@ public class ExpensesFragment extends Fragment {
 
         // Set the adapter on the ListView
         listView.setAdapter(expensesArrayAdapter);
+
+
+        // ...
+
+
+
+
+
+
+// ...
+
+
+
+
+
 
 
 
@@ -134,13 +171,10 @@ public class ExpensesFragment extends Fragment {
                                 String expenseUsername = document.getString("username");
                                 String expenseId = document.getString("id");
 
-                                System.out.println("expenseName: " + expenseName);
-                                System.out.println("expenseCategory: " + expenseCategory);
-                                System.out.println("expenseDate: " + expenseDate);
-                                System.out.println("expenseAmount: " + expenseAmount);
-                                System.out.println("expenseNote: " + expenseNote);
-                                System.out.println("expenseUsername: " + expenseUsername);
-                                System.out.println("expenseId: " + expenseId);
+                                // Find the ListView by its ID
+                                ListView listView = view.findViewById(R.id.listView);
+
+
 
 
                                 //create new expense object
@@ -150,19 +184,59 @@ public class ExpensesFragment extends Fragment {
                                 //only add expensename,expenseamount,expensedate and category to list
                                 expensesList.add(expense);
 
-
-
                                 //add expense to expensesListUser
                                 expenseUser.put(expenseId,expenseAmount);
                                 expensesListUser.add(expenseUser);
                                 System.out.println("expensesListUser: " + expensesListUser);
 
+                                //Long click listener to delete expenses
+
+                                listView.setOnItemLongClickListener((parent, view, position, id) -> {
+                                    // Get the selected expense
+
+
+
+                                    //get expense id from expensesListUser at position and expense id is the key
+                                    System.out.println("expense:"+ expensesListUser.get(position));
+
+                                    // Confirm if the user wants to delete the expense
+                                    new AlertDialog.Builder(requireContext())
+                                            .setTitle("Delete Expense")
+                                            .setMessage("Are you sure you want to delete this expense?")
+                                            .setPositiveButton("Delete", (dialog, which) -> {
+                                                // Call the deleteExpense method to delete the expense
+                                                System.out.println("amount: " + expenseAmount);
+                                                deleteExpense(expenseId);
+
+//                                                System.out.println("amount: " + expenseAmount);
+
+                                                //reduce the expense amount from the category
+                                                db.collection("Budget")
+                                                        .document(expenseCategory)
+                                                        .collection(username)
+                                                        .document(expenseCategory)
+                                                        .update("budgetProgress", FieldValue.increment(-expenseAmount));
+
+                                                //remove the expense from the expensesListUser
+//                                                expensesListUser.remove(position);
+
+                                                //remove the hashmap of expense from expenses list in Users collection
+                                                db.collection("Users")
+                                                        .document(username)
+                                                        .update("expenses", FieldValue.arrayRemove(expensesListUser.get(position)));
 
 
 
 
+                                                // Remove the expense from the list and update the adapter
+                                                expensesList.remove(position);
+                                                expensesArrayAdapter.notifyDataSetChanged();
+                                            })
+                                            .setNegativeButton("Cancel", null)
+                                            .show();
 
-
+                                    return true;
+                                });
 
 
 

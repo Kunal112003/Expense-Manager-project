@@ -4,8 +4,10 @@ package com.example.ai_project_10.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,11 +22,20 @@ public final class FragmentBudgetBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final Button buttonAddBudget;
+
+  @NonNull
   public final ImageView imageView;
 
-  private FragmentBudgetBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView) {
+  @NonNull
+  public final ListView listViewBudget;
+
+  private FragmentBudgetBinding(@NonNull FrameLayout rootView, @NonNull Button buttonAddBudget,
+      @NonNull ImageView imageView, @NonNull ListView listViewBudget) {
     this.rootView = rootView;
+    this.buttonAddBudget = buttonAddBudget;
     this.imageView = imageView;
+    this.listViewBudget = listViewBudget;
   }
 
   @Override
@@ -54,13 +65,26 @@ public final class FragmentBudgetBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_addBudget;
+      Button buttonAddBudget = ViewBindings.findChildViewById(rootView, id);
+      if (buttonAddBudget == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
         break missingId;
       }
 
-      return new FragmentBudgetBinding((FrameLayout) rootView, imageView);
+      id = R.id.listView_budget;
+      ListView listViewBudget = ViewBindings.findChildViewById(rootView, id);
+      if (listViewBudget == null) {
+        break missingId;
+      }
+
+      return new FragmentBudgetBinding((FrameLayout) rootView, buttonAddBudget, imageView,
+          listViewBudget);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

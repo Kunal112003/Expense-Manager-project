@@ -15,4 +15,127 @@
         >
     </ImageView>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/spinner"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_corners2"
+                android:spinnerMode="dropdown"
+                android:popupBackground="@color/white"
+                android:dropDownVerticalOffset="50dp"
+                android:dropDownHorizontalOffset="50dp"
+                android:dropDownWidth="match_parent"
+                android:dropDownHeight="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Pie Chart for Expenses"
+            android:textSize="20sp"
+            android:textColor="@color/blue"
+            android:gravity="center"
+            android:background="@drawable/rounded_corners2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="80dp"
+
+            />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/pieChart"
+
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rounded_corners2"
+
+
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Bar Chart for Expenses"
+            android:textSize="20sp"
+            android:textColor="@color/blue"
+            android:gravity="center"
+            android:background="@drawable/rounded_corners2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="470dp"
+
+            />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/barChart"
+
+            android:layout_marginTop="540dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rounded_corners2"/>
+
+
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:text="Line Chart for Expenses"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textColor="@color/blue"-->
+<!--            android:gravity="center"-->
+<!--            android:background="@drawable/rounded_corners2"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginTop="870dp"-->
+
+<!--            />-->
+
+<!--        <com.github.mikephil.charting.charts.LineChart-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:id="@+id/lineChart"-->
+
+<!--            android:layout_marginTop="950dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:layout_marginLeft="60dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:background="@drawable/rounded_corners2"/>-->
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </ScrollView>
+
 </FrameLayout>

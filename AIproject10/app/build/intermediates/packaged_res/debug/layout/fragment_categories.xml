@@ -3,16 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CategoriesFragment">
+    tools:context=".CategoriesFragment"
+    android:id="@+id/categoriesFragmentLayout"
+    >
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@drawable/background_design2"
-        android:layout_gravity="center"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+
+        android:layout_height="176dp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_corners2"
+        android:padding="16dp"
+        android:id="@+id/categoryLayout"
         >
-    </ImageView>
+
+        <TextView
+            android:id="@+id/categoryNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+
+            />
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="30dp"
+            android:text="Amount Spent: "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/blue"/>
+
+
+        <TextView
+            android:id="@+id/amountSpentTextView"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="-30dp"
+            />
+    </LinearLayout>
+
 
 </FrameLayout>

@@ -6,11 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.ai_project_10.R;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.PieChart;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -20,11 +23,24 @@ public final class FragmentReportsBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final BarChart barChart;
+
+  @NonNull
   public final ImageView imageView;
 
-  private FragmentReportsBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView) {
+  @NonNull
+  public final PieChart pieChart;
+
+  @NonNull
+  public final Spinner spinner;
+
+  private FragmentReportsBinding(@NonNull FrameLayout rootView, @NonNull BarChart barChart,
+      @NonNull ImageView imageView, @NonNull PieChart pieChart, @NonNull Spinner spinner) {
     this.rootView = rootView;
+    this.barChart = barChart;
     this.imageView = imageView;
+    this.pieChart = pieChart;
+    this.spinner = spinner;
   }
 
   @Override
@@ -54,13 +70,32 @@ public final class FragmentReportsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.barChart;
+      BarChart barChart = ViewBindings.findChildViewById(rootView, id);
+      if (barChart == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
         break missingId;
       }
 
-      return new FragmentReportsBinding((FrameLayout) rootView, imageView);
+      id = R.id.pieChart;
+      PieChart pieChart = ViewBindings.findChildViewById(rootView, id);
+      if (pieChart == null) {
+        break missingId;
+      }
+
+      id = R.id.spinner;
+      Spinner spinner = ViewBindings.findChildViewById(rootView, id);
+      if (spinner == null) {
+        break missingId;
+      }
+
+      return new FragmentReportsBinding((FrameLayout) rootView, barChart, imageView, pieChart,
+          spinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
